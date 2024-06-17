@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temples Around the World</title>
+    <!-- Links to CSS files in the proper order for mobile-first development -->
+    <link rel="stylesheet" href="styles/temples.css">
+    <link rel="stylesheet" href="styles/temples-large.css" media="(min-width: 1024px)">
+    <!-- Deferred JavaScript file -->
+    <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temples Around the World</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="old.html">Old</a></li>
+                <li><a href="new.html">New</a></li>
+                <li><a href="large.html">Large</a></li>
+                <li><a href="small.html">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Current Menu Selection</h2>
+        <section class="gallery">
+            <figure>
+                <img src="images/alabang.jpg" alt="Alabang, Philippines">
+                <figcaption>Alabang Philippines</figcaption>
+            </figure>
+            <figure>
+                <img src="images/cebu.jpg" alt="Cebu City, Philippines">
+                <figcaption>Cebu Philippines</figcaption>
+            </figure>
+            <figure>
+                <img src="images/manila.jpg" alt="Manila, Philippines">
+                <figcaption>Manila Philippines</figcaption>
+            </figure>
+            <figure>
+                <img src="images/bangkok.jpg" alt="Bangkok, Thailand">
+                <figcaption>Bangkok Thailand</figcaption>
+            </figure>
+            <figure>
+                <img src="images/taipei.jpg" alt="Taipei, Taiwan">
+                <figcaption>Taipei Taiwan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/kaohsiung.jpg" alt="Kaohsiung, Taiwan">
+                <figcaption>Kaohsiung Taiwan</figcaption>
+            </figure>
+            <figure>
+                <img src="images/cambodia.jpg" alt="Phnom Penh, Cambodia">
+                <figcaption>Phnom Penh Cambodia</figcaption>
+            </figure>
+            <figure>
+                <img src="images/singapore.jpg" alt="Singapore">
+                <figcaption>Singapore</figcaption>
+            </figure>
+            <figure>
+                <img src="images/tokyo.jpg" alt="Tokyo, Japan">
+                <figcaption>Tokyo Japan</figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Margaret Cabuenas, Caloocan City, Philippines.</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/temples.js" defer></script>
+</body>
+</html>
