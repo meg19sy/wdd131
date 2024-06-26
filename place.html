@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Title</title>
-    <link rel="stylesheet" href="place.css" media="(max-width: 600px)">
-    <link rel="stylesheet" href="place-large.css" media="(min-width: 601px)">
+    <title>Philippines</title>
+    <link rel="stylesheet" href="styles/place.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="styles/place-large.css" media="(min-width: 601px)">
     <script src="place.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Philippines</h1>
     </header>
+    <div class="bar"></div>
     <main>
         <picture>
-            <source media="(min-width: 601px)" srcset="images/eagle-small.webp">
-            <source media="(max-width: 600px)" srcset="images/eagle-large.webp">
-            <img src="images/eagle.webp" alt="The Philippine Monkey-eating-Eagle" class="hero-image">
+            <source media="(min-width: 601px)" srcset="images/eagle-large.webp">
+            <source media="(max-width: 600px)" srcset="images/eagle-small.webp">
+            <img src="images/eagle-large.webp" alt="The Philippine Monkey-eating-Eagle" class="hero-image">
         </picture>
         <section class="data">
             <h2>Data</h2>
@@ -37,7 +38,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> Margaret Cabuenas, Caloocan City, Philippines.</p>
+        <p>&copy; <span id="currentyear"></span> Margaret Cabuenas | Caloocan City, Philippines.</p>
         <p id="lastModified"></p>
     </footer>
     <script src="scripts/place.js" defer></script>
