@@ -45,22 +45,24 @@ main {
 
 .data, .weather {
     background-color: rgba(255, 255, 255, 0.8);
-    margin: 1rem 0.5rem; /* Adjust margin to provide space around sections */
+    margin: 1rem 0.5rem;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%; /* Adjusted width for better readability on mobile */
+    width: 90%;
 }
 
 .weather {
-    margin-bottom: 10rem; /* Increase margin bottom to separate from footer */
+    margin-bottom: 10rem;
 }
-
 
 .label {
     font-weight: bold;
 }
 
+.weather-icon {
+    display: none;
+}
 
 footer {
     background-color: var(--primary-color);
@@ -69,6 +71,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1; 
+    z-index: 1;
     margin-top: .5rem; 
 }

@@ -6,7 +6,7 @@
     <title>Philippines</title>
     <link rel="stylesheet" href="styles/place.css" media="(max-width: 600px)">
     <link rel="stylesheet" href="styles/place-large.css" media="(min-width: 601px)">
-    <script src="place.js" defer></script>
+    <script src="scripts/place.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,17 +30,16 @@
             <p><span class="label">Internet TLD:</span> .ph</p>
         </section>
         <section class="weather">
-            <h2>Weather <span class="weather-icon">⛅</span></h2>
-            <p><span class="label">Temperature:</span> 25°C</p>
-            <p><span class="label">Wind Speed:</span> 10 km/h</p>
+            <h2>Weather <span class="weather-icon"></span></h2>
+            <p><span class="label">Temperature:</span> <span id="temperature">-</span></p>
+            <p><span class="label">Wind Speed:</span> <span id="windspeed">-</span></p>
             <p><span class="label">Wind Chill:</span> <span id="windchill">N/A</span></p>
-            <p><span class="label">Condition:</span> Sunny</p>
+            <p><span class="label">Condition:</span> <span id="condition">-</span></p>
         </section>
     </main>
     <footer>
         <p>&copy; <span id="currentyear"></span> Margaret Cabuenas | Caloocan City, Philippines.</p>
         <p id="lastModified"></p>
     </footer>
-    <script src="scripts/place.js" defer></script>
 </body>
 </html>
