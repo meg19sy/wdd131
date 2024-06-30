@@ -84,14 +84,21 @@ main {
     font-weight: bold;
 }
 
-.weather-icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    background: url('../images/weather.svg') no-repeat center center;
-    background-size: contain;
+
+.weather h2 {
+    position: relative;
 }
+
+.weather h2::after {
+    content: "";
+    display: inline-block;
+    width: 20px; 
+    height: 20px; 
+    background-image: url("../images/weather.svg");
+    background-size: cover;
+    margin-left: 5px; 
+}
+
 
 footer {
     background-color: var(--primary-color);
