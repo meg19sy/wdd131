@@ -1,0 +1,20 @@
+header {
+    padding: 2rem;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    position: static;
+}
