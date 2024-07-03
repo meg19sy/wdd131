@@ -1,21 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
-.banner {
-    background-color: #333;
+.callout {
+    background-color: #702963;
     color: #fff;
     padding: 20px;
-    text-align: center;
+    padding-left: 30px; /* Adjust padding as needed */
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
+    gap: 20px; /* Add gap between columns if needed */
 }
 
 main h2 {
@@ -23,16 +20,22 @@ main h2 {
     text-align: left;
 }
 
-.callout {
-    color: #000000;
-    background-color: #f5f5f5;
-    padding: 20px;
-    margin: 20px;
+.banner {
+    /* Banner styles */
 }
 
 footer {
     text-align: left;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
+}
+
+/* Pseudo-element styling for ordered list */
+ol li::marker {
+    color: navy;
+    font-size: 2rem;
+    font-variant: small-caps;
+}
+
+ol li::before {
+    content: '☑️ ';
+    margin-right: 10px; /* Adjust the spacing as needed */
 }

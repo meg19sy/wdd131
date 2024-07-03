@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temples Around the World</title>
+    <!-- Links to CSS files in the proper order for mobile-first development -->
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css" media="(min-width: 1024px)">
+    <!-- Deferred JavaScript file -->
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temples Around the World</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="old">Old</a></li>
+                <li><a href="#" id="new">New</a></li>
+                <li><a href="#" id="large">Large</a></li>
+                <li><a href="#" id="small">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Current Menu Selection</h2>
+        <section class="gallery" id="temple-gallery">
+            <!-- Temple figures will be dynamically generated -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Margaret Cabuenas, Caloocan City, Philippines.</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/filtered-temples.js" defer></script>
+</body>
+</html>

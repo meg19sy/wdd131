@@ -1,0 +1,19 @@
+/* Main Styles for Larger Screens */
+.container {
+    padding: 0 20px; /* Add padding to the container */
+}
+
+main {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center the main content horizontally */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+    gap: 20px; /* Adjust the gap between figures */
+}
+
+.gallery figure {
+    margin: 0;
+}
