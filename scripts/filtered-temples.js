@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             area: 116642,
             imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
         },
-        // Additional temple objects as specified:
         {
             templeName: "Salt Lake Temple",
             location: "Salt Lake City, Utah, United States",
@@ -59,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         {
             templeName: "Vancouver British Columbia",
-            location: "British Columbia, CAnada",
+            location: "British Columbia, Canada",
             dedicated: "2007, April, 9",
             area: 28165,
             imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/vancouver-british-columbia/400x250/vancouver-temple-766984-wallpaper.jpg"
@@ -95,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h3>${temple.templeName}</h3>
                     <p>Location: ${temple.location}</p>
                     <p>Dedicated: ${temple.dedicated}</p>
-                    <p>Area: ${temple.area} sq ft</p>
+                    <p>Area: ${temple.area.toLocaleString()} sq ft</p>
                 </figcaption>
             </figure>
         `;
@@ -107,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function filterTemples(criteria) {
-        const currentYear = new Date().getFullYear();
         let filteredTemples;
         switch(criteria) {
             case 'old':
