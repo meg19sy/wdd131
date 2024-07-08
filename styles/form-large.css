@@ -1,0 +1,53 @@
+/* Common CSS for both mobile and large screens */
+footer {
+    background-color: #335c67;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensure footer stays on top of content */
+}
+
+main {
+    padding-bottom: 60px; /* Adjust according to footer height */
+    max-width: 800px; /* Increased max-width for wider form fields */
+    margin: 1rem auto 2rem; /* Adjusted top and bottom margins */
+}
+
+fieldset {
+    margin-bottom: 1rem; /* Space between fieldsets */
+    border: none; /* Remove default fieldset border */
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Adjust spacing below legend */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem; /* Space between labels */
+}
+
+/* Indicate optional fields */
+fieldset:not(:first-of-type) legend::after {
+    content: " (Optional)";
+    font-weight: normal;
+    color: #999;
+}
+
+/* Larger screen specific adjustments */
+@media (min-width: 768px) {
+    fieldset {
+        display: flex;
+        flex-direction: column; /* Display fields in a single column */
+    }
+
+    legend {
+        width: fit-content; /* Allow legend width to fit content */
+        padding: 0.5rem; /* Add padding for spacing */
+    }
+}

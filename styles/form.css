@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #335c67;
+    --background-color: #fff3b0;
+    --secondary-color: #e09f3e;
+    --text-color: var(--primary-color);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+}
+
+form {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+}
+
+input[type="text"], input[type="date"], textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+/* Common CSS for both mobile and large screens */
+footer {
+    background-color: #335c67;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; /* Ensure footer stays on top of content */
+}
+
+main {
+    padding-bottom: 60px; /* Adjust according to footer height */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    footer {
+        position: relative;
+    }
+}
+
+/* Add styles to indicate optional fields */
+fieldset:not(:first-of-type) legend::after {
+    content: " (Optional)";
+    font-weight: normal;
+    color: #999;
+}
+
