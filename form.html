@@ -13,62 +13,83 @@
         <h1>Product Review Form</h1>
     </header>
     <main>
-        <form id="reviewForm" action="review.html" method="get">
-            <label for="productName"><strong>Product Name *</strong></label>
-            <select id="productName" name="productName" required>
-                <option value="" disabled selected>Select a Product ...</option>
-            </select>
+        <form id="reviewForm" action="review.html" method="post">
+            <div class="form-group">
+                <label for="productName"><strong>Product Name *</strong></label>
+                <div class="input-container">
+                    <select id="productName" name="productName" required>
+                        <option value="" disabled selected>Select a Product ...</option>
+                    </select>
+                </div>
+            </div>
 
-            <fieldset>
-                <legend><strong>Overall Rating *</strong></legend>
-                <label>
-                    <input type="radio" name="rating" value="1" required>
-                    <span class="stars">★</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="2">
-                    <span class="stars">★★</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="3">
-                    <span class="stars">★★★</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="4">
-                    <span class="stars">★★★★</span>
-                </label>
-                <label>
-                    <input type="radio" name="rating" value="5">
-                    <span class="stars">★★★★★</span>
-                </label>
-            </fieldset>
+            <div class="form-group checkboxes-group">
+                <fieldset id="featuresFieldset">
+                    <legend>Useful Features</legend>
+                    <div class="input-container">
+                        <label class="inline">
+                            <input type="checkbox" name="features" value="availability of parts and services">
+                            availability of parts and services
+                        </label>
+                        <label class="inline">
+                            <input type="checkbox" name="features" value="durability">
+                            durability
+                        </label>
+                        <label class="inline">
+                            <input type="checkbox" name="features" value="ease of use">
+                            ease of use
+                        </label>
+                    </div>
+                </fieldset>
 
-            <label for="installationDate">Date of Installation (Optional)</label>
-            <input type="date" id="installationDate" name="installationDate">
+                <fieldset>
+                    <legend><strong>Overall Rating *</strong></legend>
+                    <label>
+                        <input type="radio" name="rating" value="1" required>
+                        <span class="stars">★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="2">
+                        <span class="stars">★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="3">
+                        <span class="stars">★★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="4">
+                        <span class="stars">★★★★</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="5">
+                        <span class="stars">★★★★★</span>
+                    </label>
+                </fieldset>
+            </div>
 
-            <fieldset id="featuresFieldset">
-                <legend>Useful Features</legend>
-                <label>
-                    <input type="checkbox" id="easeOfUse" name="features" value="Ease of Use">
-                    Ease of Use
-                </label>
-                <label>
-                    <input type="checkbox" id="availability" name="features" value="Availability of Parts and Services">
-                    Availability of Parts and Services
-                </label>
-                <label>
-                    <input type="checkbox" id="durability" name="features" value="Durability">
-                    Durability
-                </label>
-            </fieldset>
+            <div class="form-group">
+                <label for="installationDate">Date of Installation (Optional)</label>
+                <div class="input-container">
+                    <input type="date" id="installationDate" name="installationDate">
+                </div>
+            </div>
 
-            <label for="review">Written Review (Optional)</label>
-            <textarea id="review" name="review"></textarea>
+            <div class="form-group">
+                <label for="review">Written Review (Optional)</label>
+                <div class="input-container">
+                    <textarea id="review" name="review"></textarea>
+                </div>
+            </div>
 
-            <label for="userName">User Name (Optional)</label>
-            <input type="text" id="userName" name="userName">
+            <div class="form-group">
+                <label for="userName">User Name (Optional)</label>
+                <div class="input-container">
+                    <input type="text" id="userName" name="userName">
+                </div>
+            </div>
 
-            <input type="submit" value="Send My Feedback" id="submitBtn" disabled>
+            <input type="submit" value="Submit My Feedback" id="submitBtn" disabled>
+            <input type="hidden" id="reviewCountInput" name="reviewCount" value="0">
         </form>
     </main>
     <footer>
@@ -77,4 +98,3 @@
     </footer>
 </body>
 </html>
- 

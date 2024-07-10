@@ -1,90 +1,112 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const products = [
-        { id: "fc-1888", name: "flux capacitor", avgRating: 4.5, features: ["Time Travel", "Energy Storage", "Ease of Use", "Availability of Parts and Services", "Durability"] },
-        { id: "fc-2050", name: "power laces", avgRating: 4.7, features: ["Automatic Lacing", "Comfort Fit", "Ease of Use", "Availability of Parts and Services", "Durability"] },
-        { id: "fs-1987", name: "time circuits", avgRating: 3.5, features: ["Time Synchronization", "Destination Entry", "Ease of Use", "Availability of Parts and Services", "Durability"] },
-        { id: "ac-2000", name: "low voltage reactor", avgRating: 3.9, features: ["Energy Regulation", "Compact Design", "Ease of Use", "Availability of Parts and Services", "Durability"] },
-        { id: "jj-1969", name: "warp equalizer", avgRating: 5.0, features: ["Space-Time Manipulation", "Efficiency Boost", "Ease of Use", "Availability of Parts and Services", "Durability"] }
+document.addEventListener('DOMContentLoaded', () => {
+    const productNameSelect = document.getElementById('productName');
+    const featuresFieldset = document.getElementById('featuresFieldset');
+    const submitBtn = document.getElementById('submitBtn');
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewCountInput = document.getElementById('reviewCountInput');
+
+    let reviewCount = 0; // Initialize review count
+
+    // Initial features when no product is selected
+    const initialFeatures = [
+        'availability of parts and services',
+        'durability',
+        'ease of use'
     ];
 
-    // Function to capitalize the first letter of each word
-    const capitalizeWords = (str) => {
-        return str.replace(/\b\w/g, (char) => char.toUpperCase());
-    };
+    // Function to display features
+    function displayFeatures(features) {
+        const inputContainer = featuresFieldset.querySelector('.input-container');
+        inputContainer.innerHTML = '';
 
-    // Sort products alphabetically by name
-    products.sort((a, b) => {
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-        return 0;
+        features.forEach(feature => {
+            const label = document.createElement('label');
+            label.className = 'inline';
+            label.innerHTML = `<input type="checkbox" name="features" value="${feature}"> ${feature}`;
+            inputContainer.appendChild(label);
+        });
+    }
+
+    // Display initial features
+    displayFeatures(initialFeatures);
+
+    // Populate product name options (assuming products array is defined as before)
+    const products = [
+        { name: 'Air Conditioner', features: ['cooling', 'energy efficiency', 'noise level'] },
+        { name: 'Refrigerator', features: ['capacity', 'energy efficiency', 'temperature control'] },
+        { name: 'Washing Machine', features: ['load capacity', 'energy efficiency', 'wash programs'] },
+        { name: 'Television', features: ['picture quality', 'smart features', 'sound quality'] },
+        { name: 'Microwave Oven', features: ['cooking modes', 'energy efficiency', 'size'] }
+    ];
+
+    products.forEach(product => {
+        const option = document.createElement('option');
+        option.value = product.name;
+        option.textContent = product.name;
+        productNameSelect.appendChild(option);
     });
 
-    const productNameSelect = document.getElementById("productName");
-    const featuresFieldset = document.getElementById("featuresFieldset");
-    const submitBtn = document.getElementById("submitBtn");
-
-    if (productNameSelect) {
-        products.forEach(product => {
-            const option = document.createElement("option");
-            option.value = product.id;
-            option.textContent = capitalizeWords(product.name); // Capitalize product name
-            productNameSelect.appendChild(option);
-        });
-
-        productNameSelect.addEventListener("change", () => {
-            const selectedProductId = productNameSelect.value;
-            const selectedProduct = products.find(product => product.id === selectedProductId);
-
-            // Clear previous checkboxes
-            featuresFieldset.innerHTML = "";
-
-            // Add checkboxes for selected product features
+    // Update features based on selected product
+    productNameSelect.addEventListener('change', () => {
+        if (productNameSelect.value === '') {
+            displayFeatures(initialFeatures);
+        } else {
+            const selectedProduct = products.find(product => product.name === productNameSelect.value);
             if (selectedProduct) {
-                selectedProduct.features.forEach(feature => {
-                    const checkbox = document.createElement("input");
-                    checkbox.type = "checkbox";
-                    checkbox.id = feature.toLowerCase().replace(/\s+/g, "-"); // Create id from feature name
-                    checkbox.name = "features";
-                    checkbox.value = feature;
-                    const label = document.createElement("label");
-                    label.textContent = feature;
-                    label.appendChild(checkbox);
-                    featuresFieldset.appendChild(label);
-                });
-
-                // Enable or disable submit button based on product selection
-                if (selectedProductId) {
-                    submitBtn.disabled = false;
-                } else {
-                    submitBtn.disabled = true;
-                }
+                const sortedFeatures = selectedProduct.features.sort();
+                displayFeatures(sortedFeatures);
             }
-        });
-    }
-
-    if (document.getElementById("reviewForm")) {
-        if (!localStorage.getItem("reviewCounter")) {
-            localStorage.setItem("reviewCounter", 0);
         }
+    });
 
-        document.getElementById("reviewForm").addEventListener("submit", () => {
-            let reviewCounter = localStorage.getItem("reviewCounter");
-            reviewCounter++;
-            localStorage.setItem("reviewCounter", reviewCounter);
-        });
+    // Enable submit button when a product is selected
+    productNameSelect.addEventListener('change', () => {
+        submitBtn.disabled = !productNameSelect.value;
+    });
+
+    // Handle form submission
+    reviewForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent default form submission
+        reviewCount++; // Increment review count
+        reviewCountInput.value = reviewCount; // Update hidden input value
+        localStorage.setItem('reviewCount', reviewCount); // Store count in localStorage for persistence
+        reviewForm.submit(); // Submit the form to review.html
+    });
+
+    // Check localStorage for existing review count
+    const storedReviewCount = localStorage.getItem('reviewCount');
+    if (storedReviewCount) {
+        reviewCount = parseInt(storedReviewCount, 10);
     }
 
-    if (document.getElementById("reviewCount")) {
-        const reviewCount = localStorage.getItem("reviewCounter");
-        document.getElementById("reviewCount").textContent = reviewCount;
+    // Update review count display in the UI
+    const reviewCountElement = document.getElementById('reviewCount');
+    if (reviewCountElement) {
+        reviewCountElement.textContent = reviewCount;
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to format date and time
+    function formatDateTime(date) {
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            timeZoneName: 'short'
+        };
+        return date.toLocaleDateString('en-US', options);
     }
 
-    // Display current time of modification
-    const displayCurrentTime = () => {
-        const timeElement = document.getElementById("time");
-        const currentDateTime = new Date();
-        timeElement.textContent = `Current Time of Modification: ${currentDateTime.toLocaleString()}`;
-    };
-
-    displayCurrentTime(); // Automatically display the current time of modification when the page loads
+    // Update last modified date and time
+    const timeElement = document.getElementById('time');
+    if (timeElement) {
+        const lastModified = new Date(document.lastModified);
+        timeElement.textContent = `Last modified: ${formatDateTime(lastModified)}`;
+    }
 });

@@ -20,5 +20,18 @@
         <p>&copy; 2024 Margaret Cabuenas | Caloocan City, Philippines</p>
         <p id="time"></p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reviewCountElement = document.getElementById('reviewCount');
+            const reviewCountInput = document.getElementById('reviewCountInput');
+
+            // Display submitted review count
+            if (reviewCountElement && reviewCountInput) {
+                const submittedCount = parseInt(reviewCountInput.value, 10);
+                reviewCountElement.textContent = submittedCount;
+            }
+        });
+    </script>
 </body>
 </html>

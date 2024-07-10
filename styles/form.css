@@ -1,3 +1,4 @@
+/* General and mobile screen styles */
 :root {
     --primary-color: #335c67;
     --background-color: #fff3b0;
@@ -20,8 +21,17 @@ header {
     text-align: center;
 }
 
+header h1 {
+    margin: 0.5rem 0; /* Adjust top and bottom margin */
+    font-size: 1.4rem; /* Decrease font size */
+    line-height: 1.6rem; /* Adjust line height */
+}
+
 main {
-    padding: 1rem;
+    padding: 0.5rem;
+    max-width: 100%; /* Adjust for small screens */
+    margin: 1rem auto 2rem;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 form {
@@ -29,30 +39,85 @@ form {
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%; /* Adjust for small screens */
+    margin: 0 auto; /* Center the form */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 label {
     display: block;
-    margin: 0.5rem 0 0.25rem;
+    width: auto; /* Ensures labels take the necessary width */
+    margin-bottom: 0.5rem; /* Adds vertical spacing between labels */
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 input[type="text"], input[type="date"], textarea, select {
     width: 100%;
     padding: 0.5rem;
-    margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 fieldset {
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 4px;
     padding: 1rem;
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset legend {
+    padding: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    width: auto;
+}
+
+fieldset label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+fieldset:not(:first-of-type) legend::after {
+    content: " (Optional)";
+    font-weight: normal;
+    color: #999;
+}
+
+label.inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
 }
 
 legend {
-    padding: 0 0.5rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 0.5rem;
 }
 
 input[type="submit"] {
@@ -62,6 +127,7 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    align-self: flex-start;
 }
 
 input[type="submit"]:hover {
@@ -69,34 +135,14 @@ input[type="submit"]:hover {
     color: #000;
 }
 
-/* Common CSS for both mobile and large screens */
 footer {
     background-color: #335c67;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
-    z-index: 1000; /* Ensure footer stays on top of content */
+    z-index: 1000;
 }
-
-main {
-    padding-bottom: 60px; /* Adjust according to footer height */
-}
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
-    footer {
-        position: relative;
-    }
-}
-
-/* Add styles to indicate optional fields */
-fieldset:not(:first-of-type) legend::after {
-    content: " (Optional)";
-    font-weight: normal;
-    color: #999;
-}
-
