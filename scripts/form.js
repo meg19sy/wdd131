@@ -67,10 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle form submission
     reviewForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent default form submission
-        reviewCount++; // Increment review count
-        reviewCountInput.value = reviewCount; // Update hidden input value
-        localStorage.setItem('reviewCount', reviewCount); // Store count in localStorage for persistence
-        reviewForm.submit(); // Submit the form to review.html
+
+        // Check form validity
+        if (reviewForm.checkValidity()) {
+            reviewCount++; // Increment review count
+            reviewCountInput.value = reviewCount; // Update hidden input value
+            localStorage.setItem('reviewCount', reviewCount); // Store count in localStorage for persistence
+            reviewForm.submit(); // Submit the form to review.html
+        } else {
+            // Handle invalid form inputs if needed
+        }
     });
 
     // Check localStorage for existing review count
@@ -84,8 +90,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reviewCountElement) {
         reviewCountElement.textContent = reviewCount;
     }
-});
 
+    // Check input validity on change
+    const formInputs = document.querySelectorAll('input, select, textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('change', () => {
+            if (input.checkValidity()) {
+                input.classList.add('valid'); // Add valid class for green border
+            } else {
+                input.classList.remove('valid'); // Remove valid class if input is invalid
+            }
+        });
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     // Function to format date and time
