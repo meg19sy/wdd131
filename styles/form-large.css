@@ -1,4 +1,3 @@
-/* Large screen specific adjustments */
 @media (min-width: 768px) {
     body {
         background-color: var(--background-color); /* Ensure consistent background color */
@@ -30,10 +29,22 @@
 
     .form-group.checkboxes-group {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .form-group.checkboxes-group fieldset {
         flex: 1; /* Ensure each fieldset takes equal width */
     }
+    
+    
+    /* Remove margin on the bottom of features fieldset */
+    #featuresFieldset {
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    /* Add margin to the top of the rating fieldset */
+    #ratingFieldset {
+        margin-top: 0.5rem; /* Adjust as needed */
+    }
+}
 }

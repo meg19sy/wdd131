@@ -20,64 +20,69 @@
                     <select id="productName" name="productName" required>
                         <option value="" disabled selected>Select a Product ...</option>
                     </select>
+                    <span class="warning" id="productNameWarning" style="color: red; font-style: italic; display: none;">*Required Field</span>
                 </div>
             </div>
-
+            
             <div class="form-group checkboxes-group">
                 <fieldset id="featuresFieldset">
-                    <legend>Useful Features</legend>
+                    <legend><strong>Useful Features *</strong></legend>
+                    <span class="warning" id="featuresWarning" style="color: red; font-style: italic; display: none;">*Required Field</span>
                     <div class="input-container">
                         <label class="inline">
-                            <input type="checkbox" name="features" value="availability of parts and services">
+                            <input type="checkbox" name="features" value="availability of parts and services" required>
                             availability of parts and services
                         </label>
                         <label class="inline">
-                            <input type="checkbox" name="features" value="durability">
+                            <input type="checkbox" name="features" value="durability" required>
                             durability
                         </label>
                         <label class="inline">
-                            <input type="checkbox" name="features" value="ease of use">
+                            <input type="checkbox" name="features" value="ease of use" required>
                             ease of use
                         </label>
                     </div>
                 </fieldset>
-
+            
                 <fieldset>
                     <legend><strong>Overall Rating *</strong></legend>
+                    <span class="warning" id="ratingWarning" style="color: red; font-style: italic; display: none;">*Required Field</span>
                     <label>
                         <input type="radio" name="rating" value="1" required>
                         <span class="stars">★</span>
                     </label>
                     <label>
-                        <input type="radio" name="rating" value="2">
+                        <input type="radio" name="rating" value="2" required>
                         <span class="stars">★★</span>
                     </label>
                     <label>
-                        <input type="radio" name="rating" value="3">
+                        <input type="radio" name="rating" value="3" required>
                         <span class="stars">★★★</span>
                     </label>
                     <label>
-                        <input type="radio" name="rating" value="4">
+                        <input type="radio" name="rating" value="4" required>
                         <span class="stars">★★★★</span>
                     </label>
                     <label>
-                        <input type="radio" name="rating" value="5">
+                        <input type="radio" name="rating" value="5" required>
                         <span class="stars">★★★★★</span>
                     </label>
                 </fieldset>
             </div>
-
+            
             <div class="form-group">
-                <label for="installationDate">Date of Installation (Optional)</label>
+                <label for="installationDate"><strong>Date of Installation *</strong></label>
                 <div class="input-container">
-                    <input type="date" id="installationDate" name="installationDate">
+                    <input type="date" id="installationDate" name="installationDate" required>
+                    <span class="warning" id="installationDateWarning" style="color: red; font-style: italic; display: none;">*Required Field</span>
                 </div>
-            </div>
-
+            </div>            
+            
             <div class="form-group">
                 <label for="review">Written Review (Optional)</label>
                 <div class="input-container">
                     <textarea id="review" name="review"></textarea>
+                    <small id="wordCount">75 words remaining</small>
                 </div>
             </div>
 
@@ -89,6 +94,9 @@
             </div>
 
             <input type="submit" value="Submit My Feedback" id="submitBtn" disabled>
+            <div id="warningMessage" style="color: red; font-style: italic; display: none;">
+                Required field
+            </div>
             <input type="hidden" id="reviewCountInput" name="reviewCount" value="0">
         </form>
     </main>
