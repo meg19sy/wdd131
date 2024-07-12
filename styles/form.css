@@ -40,7 +40,7 @@ main {
 }
 
 form {
-    background-color: #fff;
+    background-color: white;
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -89,7 +89,6 @@ input[type="text"], input[type="date"], textarea, select {
     margin-top: 0.2rem; /* Reduce margin top for the input container */
 }
 
-
 fieldset {
     border: 1px solid #ccc; /* Set the border to match the textarea */
     padding: 1rem; /* Maintain padding for spacing */
@@ -98,18 +97,15 @@ fieldset {
     flex-direction: column; /* Maintain vertical layout */
 }
 
-
 fieldset legend {
     padding-left: 0; /* Remove padding to align with labels */
     margin-bottom: 0.2rem; /* Maintain spacing below legend */
 }
 
-
 fieldset label {
     display: block;
     margin-bottom: 0.2rem;
 }
-
 
 label.inline {
     display: flex;
@@ -151,7 +147,6 @@ input[type="submit"]:hover {
 .valid {
     border-left: 8px solid #28a745; /* Green border */
 }
-
 
 small {
     display: block;

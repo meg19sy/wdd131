@@ -5,7 +5,7 @@
 
     header h1 {
         margin: 0.7rem 0; /* Adjust top and bottom margin */
-        font-size: 1.8rem; /* Decrease font size */
+        font-size: 1.8rem; /* Increase font size */
         line-height: 2rem; /* Adjust line height */
     }
 
@@ -35,8 +35,7 @@
     .form-group.checkboxes-group fieldset {
         flex: 1; /* Ensure each fieldset takes equal width */
     }
-    
-    
+
     /* Remove margin on the bottom of features fieldset */
     #featuresFieldset {
         margin-bottom: 0; /* Remove bottom margin */
@@ -46,5 +45,4 @@
     #ratingFieldset {
         margin-top: 0.5rem; /* Adjust as needed */
     }
-}
 }
