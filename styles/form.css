@@ -157,6 +157,7 @@ small {
     display: block;
     margin-top: 0.5rem;
     color: var(--secondary-color);
+    font-weight: bold;
 }
 
 footer {
