@@ -47,4 +47,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(updateTime, 1000);
     updateTime();
+    
+    // Handle the word count in forms
+    function updateCounter() {
+        const messageInput = document.getElementById('message');
+        const words = messageInput.value.trim().split(/\s+/).filter(word => word.length > 0);
+        const wordCount = words.length;
+        const counter = document.getElementById('word-counter');
+    
+        // Limit message to 50 words
+        if (wordCount > 50) {
+            messageInput.value = words.slice(0, 50).join(" ");
+        }
+    
+        counter.textContent = `${wordCount} / 50 words`;
+    }
+    
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Display current time in the footer
+    function updateTime() {
+        const currentTimeElement = document.getElementById('current-time');
+        if (currentTimeElement) {
+            const now = new Date();
+            currentTimeElement.textContent = now.toLocaleTimeString();
+        }
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
 });
