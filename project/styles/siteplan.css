@@ -14,6 +14,7 @@ body {
     padding: 0;
 }
 
+
 header {
     background-color: var(--primary-color);
     color: #fff;
@@ -21,6 +22,35 @@ header {
     text-align: center;
 }
 
+nav {
+    display: flex;
+    justify-content: center; /* Center the navigation */
+    margin: 0 auto; /* Center nav itself */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+}
+
+nav ul li a:hover {
+    color: var(--tertiary-color);
+}
 h2, h3 {
     font-family: Georgia, serif;
     color: var(--secondary-color);
@@ -87,28 +117,6 @@ section {
     font-weight: bold;
     width: 100px; /* Match width with color boxes */
 }
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--tertiary-color); /* Use tertiary color on hover */
-}
-
 
 footer {
     background-color: var(--primary-color);
