@@ -6,6 +6,12 @@ header h1 {
     text-align: center;
 }
 
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem; /* Add padding to separate from the header */
+}
+
 nav ul li {
     display: inline-block;
     margin: 0 1rem;
@@ -14,6 +20,25 @@ nav ul li {
 main {
     padding: 2rem;
 }
+
+.hero-image {
+    width: 75%; 
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 0 auto; /* Center horizontally */
+}
+
+
+.map-container {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+#location iframe {
+    height: 450px; 
+}
+
 
 footer {
     position: static;

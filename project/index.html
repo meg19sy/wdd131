@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        <img src="images/logo.png" alt="MBC Transformer Logo" class="logo">
         <h1>MBC Transformer Manufacturer Incorporated</h1>
         <nav>
             <ul>
@@ -78,8 +79,11 @@
                     <input type="email" id="email" name="email" required>
                     
                     <label for="contact-number">Contact Number: <span class="required">*</span></label>
-                    <input type="text" id="contact-number" name="contact-number" required>
-                    
+                    <input type="text" id="contact-number" name="contact-number" 
+                        pattern="[0-9\-]*" 
+                        inputmode="numeric" 
+                        placeholder="e.g., 123-456-7890" 
+                        required>
                     <label for="message">Message: <span class="required">*</span></label>
                     <textarea id="message" name="message" required oninput="updateCounter()"></textarea>
                     <div id="word-counter">0 / 50 words</div>
@@ -87,13 +91,22 @@
                     
                     <button type="submit">Send My Inquiry</button>
                 </form>
-            </section>
-                  
-        
+            </section>        
+            <section id="location">
+                <h2>Our Location</h2>
+                <p>27 Guava Road Potrero 1475, Potrero, Malabon City</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61755.21720034688!2d120.95850393182654!3d14.67289807026891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b424fcee0cb7%3A0x5023611f259e3631!2s27%20Guava%20Rd%2C%20City%20of%20Malabon%2C%201475%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1721394753029!5m2!1sen!2sph" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>  
+        </section>  
     </main>
     <footer>
         <p>&copy; 2024 MBC Transformer Manufacturer Incorporated | Current Time: <span id="current-time"></span></p>
     </footer>
-    
 </body>
 </html>

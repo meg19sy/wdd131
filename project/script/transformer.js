@@ -21,20 +21,54 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
 
-            // Store form data in localStorage
-            localStorage.setItem('contactName', name);
-            localStorage.setItem('contactEmail', email);
-            localStorage.setItem('contactMessage', message);
+            // Validate inputs
+            validateInput(name);
+            validateInput(email);
+            validateInput(message);
 
-            // Display a thank you message
-            alert(`Thank you, ${name}! Your message has been received.`);
-            contactForm.reset();
+             // Store form data in localStorage if all inputs are valid
+            if (contactForm.checkValidity()) {
+                localStorage.setItem('contactName', name.value);
+                localStorage.setItem('contactEmail', email.value);
+                localStorage.setItem('contactMessage', message.value);
+
+                // Display a thank you message
+                alert(`Thank you, ${name}! Your message has been received.`);
+                contactForm.reset();
+            }
         });
     }
+    
+    // Validate individual input
+    function validateInput(input) {
+        if (input.checkValidity()) {
+            input.classList.add('valid-input');
+        } else {
+            input.classList.remove('valid-input');
+        }
+    }
+
+    const contactNumberInput = document.getElementById('contact-number');
+
+    if (contactNumberInput) {
+        contactNumberInput.addEventListener('input', function() {
+            // Allow only numbers and dashes
+            this.value = this.value.replace(/[^0-9\-]/g, '');
+        });
+    }
+
+
+    // Handle input validation on user input
+    const inputs = document.querySelectorAll('#contact-form input, #contact-form textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            validateInput(this);
+        });
+    });
 
     // Display current time in the footer
     function updateTime() {
@@ -60,9 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
             messageInput.value = words.slice(0, 50).join(" ");
         }
     
-        counter.textContent = `${wordCount} / 50 words`;
+        counter.textContent = `${wordCount} / 50 words left`;
     }
-    
+
+    document.getElementById('message').addEventListener('input', updateCounter);
 
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
