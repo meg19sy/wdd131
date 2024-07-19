@@ -1,13 +1,13 @@
 :root {
     --primary-color: #4E598C;
-    --secondary-color: #FF8C42;
+    --secondary-color: #f06610;
     --tertiary-color: #cee7ef;
     --text-color: #000000;
     --background-color: #FFFFFF;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Tahoma, Helvetica;
     margin: 0;
     padding: 0;
     line-height: 1.6;
