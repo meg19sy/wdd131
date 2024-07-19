@@ -119,6 +119,7 @@ main {
 .centered-form button {
     width: 100%;
     margin: 0.5rem 0;
+    font-weight: bold;
 }
 
 .centered-form button {
